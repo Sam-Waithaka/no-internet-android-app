@@ -17,6 +17,8 @@ public class InternetDialog {
         this.context = context;
     }
 
+
+
     public void showNoInternetDialog(){
         final Dialog dialog1 = new Dialog(context, R.style.df_dialog);
         dialog1.setContentView(R.layout.dialog_no_internet);
@@ -25,11 +27,20 @@ public class InternetDialog {
         dialog1.findViewById(R.id.btnSpinAndWinRedeem).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                /*
+                * <p> u can add a snackbar if u wish  to toggle  on and off for databundles
+                *    this is if ur network is off
+                * </p>
+                *
+                 */
                 dialog1.dismiss();
             }
         });
         dialog1.show();
     }
+
+
     public  boolean getInternetStatus() {
 
         ConnectivityManager cm = (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
